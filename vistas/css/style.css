@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+}
+a{
+	text-decoration: none;		
+}
+.navbarLanding{
+	  background-image: linear-gradient(
+      to left,
+      rgb(26, 26, 46,0.78),
+      rgb(26, 26, 46,0.78),
+      rgb(26, 26, 46,0.78),
+      rgba(1, 1, 2, 0.5)
+   );	  
+}
+.logo{
+	width: 150px;
+}
+.menuMovil{
+	color: white;	
+}
+.banner{
+	background-image: linear-gradient(
+      to left,
+      rgba(1, 1, 2, 0.3),
+      rgb(26, 26, 46,0.38),
+      rgb(26, 26, 46,0.38),
+      rgba(1, 1, 2, 0.3)
+   );
+}	
+.bannerLanding{
+	padding-top: 2%;
+	height: 355px;
+}
+.banner_img img{
+	width: 100%;
+	height: 300px;
+	object-fit: cover;	
+}
+.buscador{
+	display: flex;
+}
+.gridCategorias-container{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 200px;
+	padding: 20px;
+	grid-gap: 10px;	
+}
+.gridCategorias-item{
+	position: relative;
+}
+.gridCategorias_img{
+	width: 100%;
+	height: 100% !important;
+	object-fit: cover;
+}
+.gridCategoriaTitle{
+	position: absolute;
+	bottom: 0;
+	color: white;
+	background: #333;
+	width: 100%;
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+}
+.gridCategoriaTitle:hover{	
+	background: #d9534f;
+}
+.productos-container{
+		background-image: linear-gradient(
+      to left,
+      rgba(1, 1, 2, 0.3),
+      rgb(15, 52, 96,0.38),
+      rgb(15, 52, 96,0.38),
+      rgba(1, 1, 2, 0.3)
+   );
+}
+.comments{
+	height: 610px;
+	background: #E94560;	
+	padding-top: 2%;
+}
+.comments_img img{
+	width: 40%;
+	height: 510px;
+	object-fit: cover;
+}
+.footer{
+	background-color: rgb(26, 26, 46,1);
+}
+.footer p{
+	color: white;
+}
+.loginModal{
+	position: relative;
+	margin: 0% 22% 0% 40%;
+
+}
+.registerComerceModal{
+	position: relative;
+	margin: 0% 22% 0% 30%;
+
+}
+.modal-header{
+	height: 80px;
+	background-image: linear-gradient(
+      to left,
+      rgb(26, 26, 46,0.78),
+      rgb(26, 26, 46,0.78),
+      rgb(26, 26, 46,0.78),
+      rgba(1, 1, 2, 0.5)
+    );
+}
+.modal-header p{
+	font-weight: 100;
+    text-align: center;
+}
+.modal-body{
+	text-align: -webkit-center;
+}
+.modal-footer{
+	justify-content: center;
+}
+.registro{
+    width: 320px;
+    overflow: hidden;
+}
+.registro form{
+	display: flex;	
+  		
+}
+.modal-body .form-row {
+    width: 320px;
+	transition: margin-left 0.3s ease-in-out;
+}
+.prevImg{
+	margin-top: 30px;	
+	margin-bottom: 30px;
+	display: flex;
+	place-content: center;
+}
+.prevImgCard{
+	width: 200px;
+}
+.productBtn{
+	width: 100%;
+}
+.page-item.active .page-link {    
+    color: #fff;
+    background: #d9534f;
+    border: 1px solid #bbb;
+}
+.page-link{
+	color: #777;
+}
+/*Comercio*/
+.sidebarMenu{
+	height: 85%;
+}
+.sidebarMenu ul{
+	height: 100%;
+}
+.navItemSalir{
+	margin-top: auto;
+}
+/*MediaQuerys*/
+@media screen and (min-width: 0px) and (max-width: 430px) { 
+	.loginModal{
+		margin: 0% 22% 0% 33%;
+	}
+	.registerComerceModal{
+   		margin: 0% 12% 0% 17%;
+	}
+	.carousel-inner{
+	display: none;	
+	}
+	.bannerLanding {    
+    height: 255px;
+	}
+}
+@media screen and (min-width: 0px) and (max-width: 768px) { 
+	.buscador{
+		display: block;
+	}
+	.carousel-inner{
+	display: none;	
+	}
+	.bannerLanding {    
+    height: 255px;
+	}
+	.gridCategorias-container{		
+		grid-template-columns: repeat(2, 1fr);		
+	}
+	.gridCategorias-item:nth-child(3){
+		grid-column-start: span 2;
+	}
+	.gridCategorias-item:nth-child(8){
+		grid-column-start: span 2;
+	}
+		.gridCategorias-item:nth-child(9){
+		grid-column-start: span 2;
+	}
+	.gridCategoriaTitle{
+		font-weight: 300;
+	    font-size: 1.5rem;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) { 	
+	.gridCategorias-item:nth-child(4){
+		grid-column-start: span 2;
+	}
+	.gridCategorias-item:nth-child(5){
+		grid-row-start: span 2;
+	}
+	.gridCategorias-item:nth-child(9){
+		grid-column-start: span 2;
+	}
+	.gridCategoriaTitle{
+		font-weight: 500;
+	    font-size: 1.5rem;
+	}
+}
