@@ -287,8 +287,26 @@
 
  		return $respuesta;
  	}
- 	
  	/*=====  End of Total buscador  ======*/
+ 	
+ 	/*====================================================
+ 	=            Consultar productos comercio            =
+ 	====================================================*/
+ 	static public function ctrconsultarProductosComercio($user)
+ 	{
+ 		# code...
+ 		$tabla = "userlogin";
+ 		$item = "email";				
+ 		$userID = modeloUsuarios::mdlIdUser($tabla, $item, $user);	
+ 		$dataUser = $userID["id_userLogin"];
+ 		$tabla1 = "productos"; 		
+ 		$tabla2 = "categorias"; 		 		
+		$respuesta = modeloProductosComercio::mdlconsultarProductosComercio($tabla1,$tabla2, $dataUser);
+		return $respuesta;
+ 	}
+ 	
+ 	
+ 	/*=====  End of Consultar productos comercio  ======*/
  	
  	
  }

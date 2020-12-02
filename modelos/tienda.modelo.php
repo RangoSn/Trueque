@@ -64,9 +64,9 @@ class modeloTienda
 	/*=========================================
 	=            consultar pedidos            =
 	=========================================*/
-	static public function mdlconsultarPedidos($tabla1, $tabla2, $tabla3)
+	static public function mdlconsultarPedidos($tabla1, $tabla2, $tabla3, $userId)
 	{
-		$stmt = Conexion::conectar()->prepare("SELECT $tabla1.id_sale, $tabla1.precio_unit, $tabla1.cantidad_compra, $tabla2.nombre_cliente, $tabla2.email, $tabla3.nombre_producto FROM $tabla1 INNER JOIN $tabla2 ON $tabla1.id_client = $tabla2.id_cliente INNER JOIN $tabla3 ON $tabla1.id_prod = $tabla3.id_producto");
+		$stmt = Conexion::conectar()->prepare("SELECT $tabla1.id_sale, $tabla1.precio_unit, $tabla1.cantidad_compra, $tabla2.nombre_cliente, $tabla2.email, $tabla3.nombre_producto FROM $tabla1 INNER JOIN $tabla2 ON $tabla1.id_client = $tabla2.id_cliente INNER JOIN $tabla3 ON $tabla1.id_prod = $tabla3.id_producto WHERE id_comerce = $userId");
 		$stmt -> execute();
 		return $stmt -> fetchAll();
 		$stmt -> close();

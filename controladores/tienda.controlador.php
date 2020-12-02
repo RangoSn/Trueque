@@ -4,15 +4,21 @@
  */
 class controladorTienda
 {
-	
+	/*===============================================
+	=            Mostrar datos iniciales            =
+	===============================================*/
 	static public function ctrMostrarTienda()
 	{
 		# code...
 		$tabla = "tienda";
 		$respuesta = modeloTienda::mdlMostrarTienda($tabla);
-		return $respuesta;
-		
-	}
+		return $respuesta;	
+	}	
+	/*=====  End of Mostrar datos iniciales  ======*/
+
+	/*==========================================
+	=            Mostrar categorias            =
+	==========================================*/
 	static public function ctrMostrarCategorias()
 	{
 		# code...
@@ -20,6 +26,7 @@ class controladorTienda
 		$respuesta = modeloTienda::mdlMostrarCategorias($tabla);
 		return $respuesta;
 	}
+	/*=====  End of Mostrar categorias  ======*/
 
 	/*====================================
 	=            CARRITO            =
@@ -91,8 +98,9 @@ class controladorTienda
  			}
 	}
 	/*=====  End of CARRITO  ======*/
+
 	/*============================================
-	=            Eliminar item pedido            =
+	=            Eliminar item carrito            =
 	============================================*/
 	static public function ctrEliminarItemPedido()
 	{		
@@ -113,7 +121,8 @@ class controladorTienda
 				}
  			}
 	}
-	/*=====  End of Eliminar item pedido  ======*/
+	/*=====  End of Eliminar item carrito  ======*/
+
 	/*====================================
 	=            Nueva compra            =
 	====================================*/
@@ -137,17 +146,18 @@ class controladorTienda
 	/*=========================================
 	=            Consultar pedidos            =
 	=========================================*/
-	static public function ctrconsultarPedidos()
+	static public function ctrconsultarPedidos($user)
  	{
  		# code...
+ 		$tabla = "userlogin";
+ 		$item = "email";				
+ 		$userID = modeloUsuarios::mdlIdUser($tabla, $item, $user);	
+ 		$dataUser = $userID["id_userLogin"];
  		$tabla1 = "detalleventa"; 		 		
  		$tabla2 = "clientes";
  		$tabla3 = "productos"; 		
-		$respuesta = modeloTienda::mdlconsultarPedidos($tabla1, $tabla2, $tabla3);
+		$respuesta = modeloTienda::mdlconsultarPedidos($tabla1, $tabla2, $tabla3, $dataUser);
 		return $respuesta;
  	}
 	/*=====  End of Consultar pedidos  ======*/
-	
-	
-	
 }

@@ -109,11 +109,8 @@ class modeloProductosComercio
 		$stmt->close();
 		$stmt = null;	
 	}	
-	
-	
 	/*=====  End of Editar productos  ======*/
 	
-
 	/*=======================================
 	=            Elimar producto            =
 	=======================================*/
@@ -162,10 +159,22 @@ class modeloProductosComercio
 		$stmt = null;
 
 	}
-
-	
-	
 	/*=====  End of Total buscador  ======*/
+	
+	/*====================================================
+	=            Consultar Productos Comercio            =
+	====================================================*/
+	static public function mdlconsultarProductosComercio($tabla1, $tabla2, $user)
+	{
+		$stmt = Conexion::conectar()->prepare("SELECT $tabla1.id_producto, $tabla1.nombre_producto, $tabla2.titulo_categoria FROM $tabla1 INNER JOIN $tabla2 ON $tabla1.id_cat = $tabla2.id_categoria WHERE $tabla1.id_com = $user ORDER BY $tabla1.id_producto DESC");
+			$stmt -> execute();
+			return $stmt -> fetchAll();				
+		$stmt -> close();
+		$stmt = null;
+	}
+	
+	
+	/*=====  End of Consultar Productos Comercio  ======*/
 	
 	
 }

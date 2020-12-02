@@ -1,5 +1,5 @@
   <?php
-  $pedidos = controladorTienda::ctrconsultarPedidos();  
+  $pedidos = controladorTienda::ctrconsultarPedidos($_SESSION["user"]);  
   ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -19,8 +19,16 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
-    <!-- Main content -->
+    <?php if (empty($pedidos)): ?>
+       <div class="callout callout-info">
+            <h5><i class="fas fa-info"></i> Nota:</h5>
+            <h2>
+               No hay pedidos pendientes.
+            </h2>
+          </div>   
+    <?php endif ?>
+    <?php if (!empty($pedidos)): ?>
+          <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -94,5 +102,6 @@
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+    <?php endif ?>
   </div>
   <!-- /.content-wrapper -->

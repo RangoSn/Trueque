@@ -123,8 +123,6 @@ $totalPaginas = ceil(count($totalProductos)/12);
         # code...
         $desde = ($rutas[0] - 1)*12;
         $cantidad = 12;
-        echo $desde, $cantidad;
-        print_r($desde, $cantidad);
         $productos = controladorProductosComercio::ctrconsultarProductos($desde,$cantidad, null, null);
       }else{
         foreach ($categorias as $key => $value) {

@@ -30,8 +30,7 @@
                   <input type="password" class="form-control text-center" name="rConfirmCo" placeholder="Confirma tu contraseña">
                 </div>
                 <?php
-                $registroComercio = controladorUsuarios::ctrRegistroComercios();
-                print_r($registroComercio);
+                $registroComercio = controladorUsuarios::ctrRegistroComercios();                
                 if ($registroComercio == "errorFormato") {
                   # code...
                   echo '<script>
